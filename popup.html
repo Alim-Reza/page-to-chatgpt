@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: system-ui, sans-serif; width: 340px; margin: 12px; font-size: 13px; }
+    label { display: block; font-weight: 600; margin: 8px 0 4px; }
+    textarea, input { width: 100%; box-sizing: border-box; padding: 6px; font: inherit; }
+    textarea { height: 90px; resize: vertical; }
+    button { margin-top: 10px; width: 100%; padding: 8px; font: inherit; font-weight: 600; cursor: pointer;
+             background: #10a37f; color: #fff; border: 0; border-radius: 6px; }
+    button:disabled { opacity: .6; cursor: default; }
+    details { margin-top: 10px; }
+    #status { margin-top: 8px; color: #555; min-height: 1em; }
+  </style>
+</head>
+<body>
+  <label for="message">Your message</label>
+  <textarea id="message" placeholder="e.g. Summarize this page in 5 bullet points"></textarea>
+  <button id="send">Send page to ChatGPT</button>
+  <div id="status"></div>
+
+  <details id="settings">
+    <summary>Settings</summary>
+    <label for="mode">Send via</label>
+    <select id="mode" style="width:100%;padding:6px;font:inherit">
+      <option value="web">ChatGPT website (no API key, background tab)</option>
+      <option value="api">OpenAI API (needs API key)</option>
+    </select>
+    <label for="openIn">Open ChatGPT in (website mode)</label>
+    <select id="openIn" style="width:100%;padding:6px;font:inherit">
+      <option value="tab">Hidden background tab (recommended)</option>
+      <option value="window">Small separate window</option>
+    </select>
+    <label for="apiKey">OpenAI API key (API mode only)</label>
+    <input id="apiKey" type="password" placeholder="sk-...">
+    <label for="model">Model</label>
+    <input id="model" placeholder="gpt-4o-mini">
+  </details>
+
+  <script src="popup.js"></script>
+</body>
+</html>

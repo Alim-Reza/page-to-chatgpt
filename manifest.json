@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Page to ChatGPT",
+  "version": "1.0.0",
+  "description": "Send the current page's text plus a custom message to ChatGPT and show the reply at the bottom of the page.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.openai.com/*",
+    "https://chatgpt.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Page to ChatGPT"
+  }
+}
